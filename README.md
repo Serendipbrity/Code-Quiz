@@ -2,5 +2,7 @@
 A timed quiz to test knowlege of javascript fundamentals
 
 # Published url
+https://serendipbrity.github.io/Code-Quiz/
 
-# github link
+# Github link
+https://github.com/Serendipbrity/Code-Quiz
