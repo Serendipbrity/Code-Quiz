@@ -49,23 +49,80 @@ function updateCountdown() {
     console.log("button was clicked");
 });
 
+function getQuestion() {
+    console.log(currentQuestion);
+  
+    if (currentQuestion > 0) {
+      allQuestions[currentQuestion - 1].setAttribute("class", "hide");
+    }
+    console.log(allQuestions[currentQuestion]);
+  
+    allQuestions[currentQuestion].setAttribute("class", "show");
+  
+    playQuiz();
+  }
+  
+  function playQuiz() {
+    document.querySelector(`q.${currentQuestion + 1}-answers`).addEventListener('click', function(event) {
+      var btnClicked = event.target;
+  
+      console.log(btnClicked);
+  
+      // check if question is correct or now
+  
+      // manage timer
+  
+      currentQuestion++;
+  
+      if (currentQuestion < allQuestions.length) {
+        getQuestion();
+      } else {
+        questions.classList.add('hide');
+        questions.classList.remove('show');
+    
+        var endScreen = document.querySelector('.end');
+        endScreen.classList.add('show');
+        endScreen.classList.remove('hide');
+      }
+    })
+  };
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
 // function getQuestion() {
 //     for(var i = 0; i < 3; i++);
 // }
 
-function getQuestion() { 
-    if (currentQuestion > 0) {
-        allQuestions[currentQuestion - 1].classList.remove('show');
-        allQuestions[currentQuestion - 1].classList.add('hide');
-      }
+// function getQuestion() { 
+//     if (currentQuestion > 0) {
+//         allQuestions[currentQuestion - 1].classList.remove('show');
+//         allQuestions[currentQuestion - 1].classList.add('remove');
+//       }
   
-    allQuestions[currentQuestion].classList.remove('hide');
-    allQuestions[currentQuestion].classList.add('show');
+//     allQuestions[currentQuestion].classList.remove('hide');
+//     allQuestions[currentQuestion].classList.add('show');
   
-    document.querySelector('.q1-choice').addEventListener('click', playQuiz);
-  }
+//     playQuiz(currentQuestion[i++]);
   
-  function playQuiz() {
-   currentQuestion++;
-   getQuestion();
-  }
+//     currentQuestion++;
+//     getQuestion.addEventListener
+//   }
+  
+//   function playQuiz() {
+//    currentQuestion++;
+//    getQuestion();
+//   }
