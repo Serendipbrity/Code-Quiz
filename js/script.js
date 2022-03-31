@@ -1,4 +1,4 @@
-// switch cases for multiple choices
+// switch cases for multiple choices?
 // view high score link/dropdown on left top
 // right or wrong after answer (affects time)
 // high score and time left in header (or hero)
@@ -15,6 +15,41 @@ var currentQuestion = 0;
 var next = document.getElementById("next");
 
 
+// let questions = [
+//   {
+//       numb: 1,
+//       question: "What are arrays enclosed in?",
+//       answer: "[]",
+//       options: [
+//           "()",
+//           "[]",
+//           "''",
+//           "{}"
+//       ]
+//   },
+//   {
+//       numb: 2,
+//       question: "What is nNOT an example of a primitive data type?",
+//       answer: "Condition",
+//       options: [
+//           "Boolean",
+//           "String",
+//           "Condition",
+//           "Undefined"
+//       ]
+//   },
+//   {
+//       numb: 3,
+//       question: "True of False: reset() method only only works for the form element",
+//       answer: "True",
+//       options: [
+//           "True",
+//           "False"
+//       ]
+//   },
+// ];
+
+
 // when start button clicked, hide start page, show first question
 startBtn.addEventListener("click", function(event) {
 var startScreen = document.querySelector(".start");
@@ -23,7 +58,6 @@ startScreen.classList.remove("show");
 
 questions.classList.add("show");
 questions.classList.remove("hide");
-
 
 
 // timer starts at 2 minutes
@@ -53,30 +87,32 @@ function updateCountdown() {
   
  // show next question, hide last
   function getQuestion() { 
-    for(var i = 0; i < 3; i++);
+    for(var i = 0; i <= allQuestions.length; i++)
     
      {
       allQuestions[currentQuestion].classList.remove('show');
       allQuestions[currentQuestion].classList.add('hide');
      
      }
-  
-     currentQuestion = allQuestions[currentQuestion + 1].classList.remove('hide');
-     currentQuestion = allQuestions[currentQuestion + 1].classList.add('show');
+  {
+     allQuestions[currentQuestion + 1].classList.remove('hide');
+     allQuestions[currentQuestion + 1].classList.add('show');
+
      console.log(currentQuestion);
   
-     currentQuestion = i;
+      currentQuestion ++;
     
     
     console.log("try");
 };
+
   
-var correctAnswers = document.value("true");
-console.log(correctAnswers);
+// var correctAnswers = document.value("true");
+// console.log(correctAnswers);
 
   function playQuiz() {
     //document.querySelector(`questions.${currentQuestion - 1}-answers`).addEventListener('click', function(event) {
-         document.querySelector(".answers").addEventListener("click", function(event){
+         document.getElementsByClassName("answers").addEventListener("click", function(event){
 
       var btnClicked = event.target;
 
