@@ -12,7 +12,7 @@ var questionThree = document.getElementById("q3");
 var allQuestions = [questionOne, questionTwo, questionThree];
 console.log(allQuestions);
 var currentQuestion = 0;
-var next = document.getElementById("next");
+var next = document.querySelector(".next");
 
 
 // let questions = [
@@ -104,7 +104,8 @@ function updateCountdown() {
     
     
     console.log("try");
-};
+}
+  };
 
   
 // var correctAnswers = document.value("true");
@@ -125,7 +126,7 @@ function updateCountdown() {
       //     }
       console.log(btnClicked);
         });
-      // check if question is correct or now
+      // check if question is correct or not
   
       // manage timer
   
