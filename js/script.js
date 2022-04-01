@@ -59,12 +59,12 @@ function updateCountdown() {
   function getQuestion() { 
     for(var i = 0; i <= allQuestions.length; i++)
     
-     {
+     {// hide current question
       allQuestions[currentQuestion].classList.remove('show');
       allQuestions[currentQuestion].classList.add('hide');
      
      }
-  {
+  { // show next question
      allQuestions[currentQuestion + 1].classList.remove('hide');
      allQuestions[currentQuestion + 1].classList.add('show');
 
@@ -74,12 +74,34 @@ function updateCountdown() {
 }
   };
 // when I click a correct answer, add 10 seconds to timer
-var correct = document.getElementsByClassName("true").addEventListener('click', (updateCountdown() + 10));
-console.log("correct");
-// when I click a wrong answer, subtract 10 seconds from timer
-var wrong = document.getElementsByClassName("false").addEventListener('click', (updateCountdown() - 10));
-console.log("wrong");
+// var correct = document.getElementsByClassName("true").addEventListener('click', (updateCountdown() + 10));
+// console.log("correct");
+// // when I click a wrong answer, subtract 10 seconds from timer
+// var wrong = document.getElementsByClassName("false").addEventListener('click', (updateCountdown() - 10));
+// console.log("wrong");
+var a1 = document.getElementById("a1");
+var a2 = document.getElementById("a2");
+var a3 = document.getElementById("a3");
+var a4 = document.getElementById("a4");
+var a5 = document.getElementById("a5");
+var a6 = document.getElementById("a6");
+var a7 = document.getElementById("a7");
+var a8 = document.getElementById("a8");
+var a9 = document.getElementById("a9");
+var a10 = document.getElementById("a10");
 
+var answers = [a1,a2,a3,a4,a5,a6,a7,a8,a9,a10]; 
+ function checkAnswer() {
+     for(var i = 0; i < answers.length; i++) { 
+       if (answers[i].value="false") {
+         updateCountdown() - 10
+       }
+       else {
+         updateCountdown() + 10
+       }
+ };
+ answers.addEventListener("click",checkAnswer());
+};
 
  //{
 //   console.log("correct");
