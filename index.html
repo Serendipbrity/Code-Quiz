@@ -11,7 +11,9 @@
 <body>
     <!--Timer/Highscore-->
     <div class="row justify-content-evenly">
-        <div id=highscore class="col-4">View High Score</div>
+        <button id=highscore class="col-4">View High Score
+            <form class="hide score"></form>
+    </button>
         <div class="col-4">Time Left:
         <span id="countdown"></span>
         </div>
@@ -35,14 +37,14 @@
                     What are arrays enclosed in?
                 </h2>
                 <div class="answers d-grid col-1 mx-left options">
-                    <button class="q1-choice" value="false">()</button> </br>
-                    <button class="q1-choice" value="true">[]</button> </br>
-                    <button class="q1-choice" value="false">""</button> </br>
-                    <button class="q1-choice" value="false">{}</button> </br>
+                    <button class="q1-choice" class="false">()</button> </br>
+                    <button class="q1-choice" class="true">[]</button> </br>
+                    <button class="q1-choice" class="false">""</button> </br>
+                    <button class="q1-choice" class="false">{}</button> </br>
                 </div>
 
             </div>
-            <button class="next">Next</button>
+            <button id="next-1">Next</button>
         </div>
         <div class="hide" id="q2">
             <div class="row">
@@ -52,40 +54,41 @@
                 </h2>
                 <div class="answers d-grid col-1 mx-left options">
                     <!--class true/false switched so only false subtracts time-->
-                    <button class="q2-choice" value="false">Boolean</button> </br>
-                    <button class="q2-choice" value="false">String</button> </br>
-                    <button class="q2-choice" value="true">Condition</button> </br>
-                    <button class="q2-choice" value="false">Undefined</button> </br>
+                    <button class="q2-choice" class="false">Boolean</button> </br>
+                    <button class="q2-choice" class="false">String</button> </br>
+                    <button class="q2-choice" class="true">Condition</button> </br>
+                    <button class="q2-choice" class="false">Undefined</button> </br>
                 </div>
             </div>
-            <button class="next">Next</button>
+            <button id="next-2">Next</button>
         </div>
         <div class="hide" id="q3">
             <div class="row">
                 <h2>
                     Question 3. </br>
-                    True or False </br>
+                    True or False: </br>
                     reset() method only works for the form element
                 </h2>
                 <div class="answers d-grid col-1 mx-left options">
-                    <button class="q3-choice" value="true">True</button> </br>
-                    <button class="q3-choice" value="false">False</button> </br>
+                    <button class="q3-choice" class="true">True</button> </br>
+                    <button class="q3-choice" class="false">False</button> </br>
                 </div>
             </div>
-            <button class="next">Next</button>
+            <button id="next-3">Next</button>
         </div>
     </div>
     <!--Save Score-->
-    <div class="show end" id="save">
+    <form class="hide end" id="save">
         <div class="row">
             <h2>
                All Done! 
             </h2>
             <p id="score">Your score is</p>
-            <p>Enter initials and save</p>
-                <input>
+            <label for="enterInitials">Enter initials and save</label>
+                <input type="text" id="initials" placeholder="Initials">
+                <button id="saveBtn">Save</button>
         </div>
-    </div>
+    </form>
 <!--    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
